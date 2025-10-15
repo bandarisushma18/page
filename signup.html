@@ -3,85 +3,168 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign up</title>
+  <title>Charginguu - Sign Up</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
-       height: 100vh;
-    background: linear-gradient(40deg,#1FA2FF, #12D8FA, #a72056);
-     /* background-color:#f6d7d7;*/
+      margin: 0;
+      height: 100vh;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(40deg,#1FA2FF, #12D8FA, #a72056);
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      overflow-x: hidden;
     }
+
     .signup-box {
-      /* height: 100vh;*/
-    background: linear-gradient(40deg,#1FA2FF, #12D8FA, #a72056);
-     /* background: #f6d7d7;*/
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
       width: 100%;
       max-width: 400px;
-    }
-    .signup-box h3 {
+      background: rgba(255,255,255,0.05);
+      padding: 35px 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
       text-align: center;
-      margin-bottom: 25px;
+      color: #fff;
+      position: relative;
     }
-    .Register {
-      background-color:  #a72056;
+
+    /* Logo & App Name */
+    .signup-box .title {
+      font-weight: 700;
+      margin-left: 10px;
+    }
+
+    /* Form Inputs */
+    .signup-box input {
+      border-radius: 10px;
+      margin-top: 10px;
+      padding: 10px;
       border: none;
-      color: black;
     }
-    .Register:hover {
-      background-color:  #ab1350;
+
+    .signup-box input:focus {
+      outline: none;
+      box-shadow: 0 0 5px rgba(29,3,134,0.7);
     }
-    .otp{
-      background-color: #a72056;
+
+    /* Buttons */
+    .btn-custom {
+      width: 100%;
+      padding: 10px;
+      margin-top: 15px;
+      border-radius: 10px;
       border: none;
-      color: black;
+      font-weight: 500;
+      color: #fff;
+      background-color: #1d0386;
+      transition: 0.3s;
     }
-    .otp:hover{
-      background-color:#ab1350 ;
+
+    .btn-custom:hover {
+      background-color: #15026b;
     }
-    .login{
-      color: rgb(66, 66, 250);
+
+    /* OTP button inside input group */
+    .input-group .otp {
+      border-radius: 0 10px 10px 0;
+      border: none;
+      background-color: #1d0386;
+      color: #fff;
+      padding: 10px 15px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .input-group .otp:hover {
+      background-color: #15026b;
+    }
+
+    /* Login link */
+    .login a {
+      color: #f0f0f0;
+      text-decoration: underline;
+    }
+
+    /* Next Button */
+    .Next {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 8px 20px;
+      border-radius: 12px;
+      font-weight: 500;
+      color: #fff;
+      text-decoration: none;
+      background-color: #1d0386;
+      transition: 0.3s;
+    }
+
+    .Next:hover {
+      background-color: #15026b;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .signup-box {
+        padding: 30px 20px;
+      }
+      .btn-custom, .otp {
+        font-size: 14px;
+        padding: 8px;
+      }
+      .Next {
+        padding: 6px 16px;
+        font-size: 13px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .signup-box {
+        padding: 25px 15px;
+      }
+      .btn-custom, .otp {
+        font-size: 13px;
+        padding: 7px;
+      }
+      .Next {
+        padding: 5px 12px;
+        font-size: 12px;
+      }
     }
   </style>
 </head>
 <body>
 
   <div class="signup-box">
+    <!-- Logo -->
     <div class="d-flex align-items-center justify-content-center mb-3">
-        <img src="full-battery.png" alt="battery-icon" width="50px me-2">
-        <div class="fw-bold">
-          <h4 class="title">Charginguu</h4>
-        </div>
-      </div>
+      <img src="full-battery.png" alt="battery-icon" width="50">
+      <div class="fw-bold title">Charginguu</div>
+    </div>
 
     <h3>Create Account</h3>
 
     <form>
-      <div class="mb-3">
-        <input type="text" class="form-control" placeholder="Full Name" required>
-      </div>
-      <div class="mb-3 input-group">
+      <input type="text" class="form-control" placeholder="Full Name" required>
+
+      <div class="input-group mt-2">
         <input type="text" class="form-control" placeholder="Email / Mobile Number" required>
-        <button class="otp btn btn-outline-secondary" type="button">Verify OTP</button>
-      </div>
-      <div class="mb-3">
-        <input type="password" class="form-control" placeholder="Password" required>
-      </div>
-      <div class="mb-3">
-        <input type="password" class="form-control" placeholder="Confirm Password" required>
+        <button class="otp btn" type="button">Verify OTP</button>
       </div>
 
-      <button type="submit" class="Register btn  w-100">Register</button>
+      <input type="password" class="form-control mt-2" placeholder="Password" required>
+      <input type="password" class="form-control mt-2" placeholder="Confirm Password" required>
 
-      <p class="login text-center mt-3">Already have an account? <a href="loginpage.html">Login</a></p>
+      <button type="submit" class="btn-custom">Register</button>
+
+      <p class="login mt-3">Already have an account? <a href="loginpage.html">Login</a></p>
     </form>
   </div>
 
+  <!-- Next Button -->
+  <a href="homescreen.html" class="Next">Next</a>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
