@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Homescreen</title>
+
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+  />
+
+  <style>
+    body {
+      min-height: 100vh;
+      background: linear-gradient(40deg, #1FA2FF, #12D8FA, #a72056);
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .charginguu-card {
+      background: #fff;
+      width: 100%;
+      max-width: 900px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .bg-teal {
+      background-color: #0ea5e9;
+    }
+
+    .map-area {
+      position: relative;
+      background-color: #e5e7eb;
+      border-radius: 8px;
+      overflow: hidden;
+      height: 300px;
+    }
+
+    @media (min-width: 768px) {
+      .map-area {
+        height: 450px;
+      }
+    }
+
+    .map-area img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .map-marker {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      border: 2px solid white;
+    }
+
+    .map-marker.green {
+      background-color: #22c55e;
+    }
+
+    .map-marker.blue {
+      background-color: #3b82f6;
+    }
+
+    .map-marker.black {
+      background-color: #000;
+    }
+
+    .info-card {
+      position: absolute;
+      bottom: 15px;
+      left: 15px;
+      background: white;
+      width: 160px;
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+    .badge {
+      font-size: 0.75rem;
+    }
+
+    .btn-sm {
+      font-size: 0.85rem;
+    }
+
+    /* Responsive fixes for mobile */
+    @media (max-width: 576px) {
+      .info-card {
+        width: 130px;
+        padding: 8px;
+      }
+      h5 {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Centered container -->
+  <div class="charginguu-card">
+
+    <!-- Header -->
+    <div class="d-flex justify-content-between align-items-center bg-teal text-white px-3 py-2">
+      <i class="bi bi-list fs-5"></i>
+      <h5 class="m-0 text-center flex-grow-1">Charginguu</h5>
+      <i class="bi bi-bell fs-5"></i>
+    </div>
+
+    <!-- Search and Filters -->
+    <div class="p-3">
+      <div class="input-group mb-3">
+        <span class="input-group-text bg-light">
+          <i class="bi bi-search"></i>
+        </span>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Search for a spot or address..."
+        />
+      </div>
+
+      <div class="d-flex flex-wrap gap-2 justify-content-center">
+        <button class="btn btn-outline-success btn-sm">Fast Charging</button>
+        <button class="btn btn-outline-primary btn-sm">Free Slots</button>
+        <button class="btn btn-outline-secondary btn-sm">Open Now</button>
+        <button class="btn btn-outline-danger btn-sm">High Ratings</button>
+      </div>
+    </div>
+
+    <!-- Map Area -->
+    <div class="map-area mx-3 mb-3">
+      <img src="worldmap.png" alt="Map" />
+
+      <!-- Map Markers -->
+      <div class="map-marker green" style="top: 30%; left: 40%;"></div>
+      <div class="map-marker blue" style="top: 50%; left: 70%;"></div>
+      <div class="map-marker black" style="top: 65%; left: 30%;"></div>
+
+      <!-- Info Card -->
+      <div class="info-card shadow-sm">
+        <h6 class="m-0 fw-semibold">Cafe Aura</h6>
+        <small>250 meters away</small><br />
+        <span class="badge bg-success mt-1">Available</span>
+      </div>
+    </div>
+
+    <!-- Footer Buttons -->
+    <div class="p-3 text-end">
+      <button class="btn btn-outline-dark btn-sm">List View</button>
+      <a href="chargingspotdetails.html" class="btn btn-dark btn-sm ms-2">Next</a>
+    </div>
+  </div>
+
+ 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

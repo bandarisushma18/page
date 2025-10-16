@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Confirm Booking</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <style>
+    body {
+      min-height: 100vh;
+      background: linear-gradient(40deg, #1FA2FF, #12D8FA, #a72056);
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .booking-card {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      max-width: 420px;
+      width: 100%;
+      padding: 20px 25px;
+    }
+
+    h5 {
+      text-align: center;
+      background-color: #00bfa6;
+      padding: 10px;
+      color: white;
+      border-radius: 10px;
+      font-weight: 600;
+    }
+
+    .price-summary {
+      background-color: #f8f9fa;
+      border-radius: 10px;
+      padding: 12px 15px;
+      margin-top: 10px;
+    }
+
+    .btn-confirm {
+      background-color: #00bfa6;
+      color: white;
+      font-weight: 600;
+      width: 100%;
+      border: none;
+    }
+
+    .btn-confirm:hover {
+      background-color: #00a58e;
+      color: #fff;
+    }
+
+    .back {
+      display: inline-block;
+      text-decoration: none;
+      border-radius: 10px;
+      background-color: #1FA2FF;
+      color: #fff;
+      text-align: center;
+      padding: 8px 16px;
+      width: 100%;
+      margin-top: 10px;
+      font-weight: 500;
+    }
+
+    .back:hover {
+      background-color: #12D8FA;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    @media (max-width: 576px) {
+      .booking-card {
+        padding: 15px;
+      }
+      h5 {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <div class="booking-card">
+    <h5 class="d-flex justify-content-between align-items-center">
+      <i class="bi bi-arrow-left"></i>
+      Charginguu
+      <i class="bi bi-bell"></i>
+    </h5>
+
+    <h4 class="text-center mt-4 mb-4">Confirm Booking</h4>
+
+    <!-- Spot Summary -->
+    <div class="mb-3">
+      <h6>Spot Summary</h6>
+      <p class="mb-1 fw-bold">Cafe Aura</p>
+      <small>Today, 2:00 PM - 2:30 PM</small>
+    </div>
+
+    <!-- Time Selection -->
+    <div class="mb-3">
+      <h6>Time Selection</h6>
+      <div class="btn-group d-flex flex-wrap gap-2 w-100" role="group">
+        <input type="radio" class="btn-check" name="duration" id="t15" checked>
+        <label class="btn btn-outline-primary flex-fill" for="t15">15 min</label>
+
+        <input type="radio" class="btn-check" name="duration" id="t30">
+        <label class="btn btn-outline-primary flex-fill" for="t30">30 min</label>
+
+        <input type="radio" class="btn-check" name="duration" id="t45">
+        <label class="btn btn-outline-primary flex-fill" for="t45">45 min</label>
+
+        <input type="radio" class="btn-check" name="duration" id="t60">
+        <label class="btn btn-outline-primary flex-fill" for="t60">1 hr</label>
+      </div>
+    </div>
+
+    <!-- Price Summary -->
+    <div class="price-summary">
+      <strong>Price Summary</strong>
+      <p class="d-flex justify-content-between mb-1"><span>Base Price:</span><span>₹30.00</span></p>
+      <p class="d-flex justify-content-between mb-1"><span>Tax/Fees:</span><span>₹55.00</span></p>
+      <p class="d-flex justify-content-between mb-1 text-success"><span>Coupon Applied:</span><span>-₹10.00</span></p>
+      <hr>
+      <p class="d-flex justify-content-between fw-bold"><span>Total Payable:</span><span>₹75.00</span></p>
+    </div>
+
+    <!-- Payment Method -->
+    <div class="mt-3">
+      <label class="form-label">Choose Payment Method</label>
+      <select class="form-select">
+        <option selected>UPI</option>
+        <option>Wallet (Paytm, GPay)</option>
+        <option>Credit/Debit Card</option>
+      </select>
+    </div>
+
+    <!-- Terms -->
+    <div class="form-check mt-3">
+      <input class="form-check-input" type="checkbox" id="terms">
+      <label class="form-check-label" for="terms">
+        I agree to the Terms and Conditions
+      </label>
+    </div>
+
+    <!-- Buttons -->
+    <button class="btn btn-confirm mt-4" disabled  id="confirmBtn">Pay & Confirm</button>
+    <a href="chargingspotdetails.html" class="back">Back</a>
+  </div>
+
+  <script>
+    // Enable confirm button only when terms are accepted
+    const terms = document.getElementById('terms');
+    const confirmBtn = document.getElementById('confirmBtn');
+
+    terms.addEventListener('change', () => {
+      confirmBtn.disabled = !terms.checked;
+    });
+  </script>
+
+
+</body>
+</html>
